@@ -9,6 +9,7 @@ defmodule Backspoon do
     children = [
       # Start the endpoint when the application starts
       supervisor(Backspoon.Endpoint, []),
+      supervisor(Task.Supervisor, [[name: Backspoon.GiphySupervisor]]),
       # Here you could define other workers and supervisors as children
       # worker(Backspoon.Worker, [arg1, arg2, arg3]),
     ]

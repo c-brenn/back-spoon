@@ -16,7 +16,7 @@ defmodule Backspoon.ChatChannel do
         |> Giphy.fetch_gif(socket)
       _ -> nil
     end
-    broadcast! socket, "new_message", %{username: message["username"], message: message["message"], host: message["host"]}
+    broadcast! socket, "new_message", %{username: Plug.HTML.html_escape(message["username"]), message: Plug.HTML.html_escape(message["message"]), host: message["host"]}
     {:noreply, socket}
   end
 

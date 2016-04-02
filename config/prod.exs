@@ -14,7 +14,8 @@ use Mix.Config
 config :backspoon, Backspoon.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: System.get_env("HOSTNAME"), port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  cache_static_manifest: "priv/static/manifest.json",
+  check_origin: false
 
 # Do not print debug messages in production
 config :logger, level: :info

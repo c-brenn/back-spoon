@@ -3,6 +3,7 @@ defmodule Backspoon.UserSocket do
 
   ## Channels
   # channel "rooms:*", Backspoon.RoomChannel
+  channel "chat:*", Backspoon.ChatChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
